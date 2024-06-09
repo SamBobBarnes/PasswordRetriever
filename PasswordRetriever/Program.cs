@@ -7,16 +7,17 @@ var envPath = args[0] ?? ".env";
 
 FileStream fileStream = new FileStream(envPath, FileMode.Open, FileAccess.Read);
 
+//TODO: if the file is empty, create a new key and write it to the file
+//TODO: show uri if generated
+// var uriString = new OtpUri(OtpType.Totp, key, "sambobbarnes", "Server Pass Retriever").ToString();
+// Console.WriteLine("The URI is: {0}", uriString);
+
 using StreamReader reader = new StreamReader(fileStream);
 var key = Encoding.ASCII.GetBytes(reader.ReadLine()!.Split("=")[1]);
 reader.Close();
 
 var totp = new Totp(key);
 
-var uriString = new OtpUri(OtpType.Totp, key, "sambobbarnes", "Server Pass Retriever").ToString();
-Console.WriteLine("The URI is: {0}", uriString);
-
-Console.WriteLine("The current TOTP is: {0}", totp.ComputeTotp());
 Console.WriteLine("Enter the TOTP: ");
 var input = Console.ReadLine();
 
