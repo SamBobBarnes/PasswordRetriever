@@ -45,12 +45,16 @@ public class SecretClient
 public static class MachineName
 {
   public const string Containerd = "CONTAINERD";
+  public const string Immich = "IMMICH";
+  public const string Mqtt = "MQTT";
   
   public static bool IsValid(string machineName)
   {
     return machineName switch
     {
       Containerd => true,
+      Immich => true,
+      Mqtt => true,
       _ => false
     };
   }

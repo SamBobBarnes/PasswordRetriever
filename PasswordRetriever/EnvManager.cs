@@ -62,4 +62,9 @@ public class EnvManager
       Console.Error.WriteLine(e.Message);
     }
   }
+
+  public static void HelpText()
+  {
+    Console.WriteLine("Usage: PasswordRetriever <machineName> <envPath>");
+  }
 }
