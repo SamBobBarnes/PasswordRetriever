@@ -35,9 +35,9 @@ try
   if (!valid)
     Console.WriteLine("The input: {0} is invalid", input);
   else
-    secretClient.GetPassword(MachineName.Containerd);
+    secretClient.GetPassword(machineName);
 }
-catch (ArgumentNullException e)
+catch (ArgumentNullException)
 {
   EnvManager.HelpText();
 }
