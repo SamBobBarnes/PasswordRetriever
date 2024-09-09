@@ -19,4 +19,5 @@ printf "#! /bin/bash \n\n/opt/password/PasswordRetriever ${machineName} /opt/pas
 chmod +x /opt/password/bin/password
 ln -sf /opt/password/bin/password /usr/bin/password
 echo "Installation complete!"
+echo "To retrieve password, run 'password' in terminal and enter the TOTP code when prompted."
 echo
