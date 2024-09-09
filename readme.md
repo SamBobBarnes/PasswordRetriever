@@ -8,7 +8,7 @@
 ```bash
 tar -xf linux-x64.tar.gz && \
 cd out/linux-x64 && \
-./install.sh
+sudo ./install.sh
 ```
 
 ## Uninstallation
