@@ -36,7 +36,7 @@ public class SecretClient
     {
       SecretName = machineName,
       ProjectId = "4fbd3fb6-5521-4ae8-8887-972a4f7c2acb",
-      Environment = "prod",
+      Environment = "pass",
     };
     Console.WriteLine(_client.GetSecret(getSecretOptions).SecretValue);
   }
@@ -47,6 +47,7 @@ public static class MachineName
   public const string Containerd = "CONTAINERD";
   public const string Immich = "IMMICH";
   public const string Mqtt = "MQTT";
+  public const string WebHost = "WEB_HOST";
   
   public static bool IsValid(string machineName)
   {
@@ -55,6 +56,7 @@ public static class MachineName
       Containerd => true,
       Immich => true,
       Mqtt => true,
+      WebHost => true,
       _ => false
     };
   }
